@@ -228,6 +228,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/数字转汉字的算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/31/数字转汉字的算法/" itemprop="url">数字转汉字的算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-31T11:41:25+08:00">
+                2018-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近完成了《数据结构和算法》的阅读，作为补充和总结，开始了《算法的乐趣》阅读，这里记录下里面一些算法的实现，有些在网上找不到合适的实现，就自己憋了一点出来。</p>
+<p>第4章里面有个数字转中文的例子，用cpp写了部分的核心代码，我想用c仿写一遍，网上找了一圈也没有现成的可以抄，只有自己慢慢磨出来。</p>
+<p>这个过程并不是特别顺利，知道算法怎么实现，和具体把它写出来运行成功还是有一定差距的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">纸上得来终觉浅，绝知此事要躬行</div><div class="line">                   ——出自《冬夜读书示子聿》</div></pre></td></tr></table></figure>
+<p>以下是clang的代码，在osx下编译通过没有问题</p>
+<p>简述下算法的思想，大概就是按照汉语的习惯是把数字每一万做一次分割，所以算法也是这么设计，每个section单独翻译，然后加上中间汉字拼接起来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * =====================================================================================</div><div class="line"> *</div><div class="line"> *       Filename:  nums2chinese.c</div><div class="line"> *</div><div class="line"> *    Description:  数字转换成中文字符</div><div class="line"> *</div><div class="line"> *        Version:  1.0</div><div class="line"> *        Created:  2018-01-29</div><div class="line"> *       Revision:  none</div><div class="line"> *       Compiler:  gcc</div><div class="line"> *</div><div class="line"> *         Author:  wq</div><div class="line"> *</div><div class="line"> * =====================================================================================</div><div class="line"> */</div><div class="line">/* 算法的乐趣里面的例子，我把代码补充完整 */</div><div class="line"></div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">#include &lt;string.h&gt;</div><div class="line"></div><div class="line">#define LENGTH(a) ((sizeof(a)) / (sizeof(a[0])))</div><div class="line">#define TRUE 1</div><div class="line">#define FALSE 0</div><div class="line"></div><div class="line">char *const chnNumChar[] = &#123;&quot;零&quot;, &quot;一&quot;, &quot;二&quot;, &quot;三&quot;, &quot;四&quot;,</div><div class="line">                            &quot;五&quot;, &quot;六&quot;, &quot;七&quot;, &quot;八&quot;, &quot;九&quot;&#125;;</div><div class="line">char *const chnUnitSection[] = &#123;&quot;&quot;, &quot;万&quot;, &quot;亿&quot;, &quot;万亿&quot;&#125;;</div><div class="line">char *const chnUnitChar[] = &#123;&quot;&quot;, &quot;十&quot;, &quot;百&quot;, &quot;千&quot;&#125;;</div><div class="line"></div><div class="line">char *Number2Chinese(int num);</div><div class="line">char *Section2Chinese(int);</div><div class="line">char *join(char *s1, char *s2);</div><div class="line"></div><div class="line">int main(int ac, char *av[]) &#123;</div><div class="line">	int num;</div><div class="line"></div><div class="line">	/* check args */</div><div class="line">	if (ac != 2) &#123;</div><div class="line">		fprintf(stderr, &quot;usage: num2chinese num\n&quot;);</div><div class="line">		exit(1);</div><div class="line">	&#125;</div><div class="line">	num = atoi(av[1]);</div><div class="line">	printf(&quot;输入数字: %d\n&quot;, num);</div><div class="line">	printf(&quot;转换结果: %s\n&quot;, Number2Chinese(num));</div><div class="line">	return 1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">char *Number2Chinese(int num) &#123;</div><div class="line">	char *chnStr = &quot;&quot;;</div><div class="line">	int unitPos = 0;</div><div class="line">	char *strIns = &quot;&quot;;</div><div class="line">	int needZero = FALSE;</div><div class="line">	int section;</div><div class="line"></div><div class="line">	while (num &gt; 0) &#123;</div><div class="line">		section = num % 10000;</div><div class="line">		printf(&quot;section: %d\n&quot;, section);</div><div class="line">		if (needZero) &#123;</div><div class="line">			chnStr = join(chnNumChar[0], chnStr);</div><div class="line">		&#125;</div><div class="line">		strIns = Section2Chinese(section);</div><div class="line">		printf(&quot;section to chinese: %s\n&quot;, strIns);</div><div class="line">		strIns = join(strIns,</div><div class="line">			      (section != 0) ? chnUnitSection[unitPos] : chnUnitSection[0]);</div><div class="line">		chnStr = join(strIns, chnStr);</div><div class="line">		needZero = (section &lt; 1000) &amp;&amp; (section &gt; 0);</div><div class="line">		num = num / 10000;</div><div class="line">		++unitPos;</div><div class="line">	&#125;</div><div class="line">	return chnStr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 块 转成汉字</div><div class="line">char *Section2Chinese(int section) &#123;</div><div class="line">	char *chnStr = &quot;&quot;;</div><div class="line">	char *strIns = &quot;&quot;;</div><div class="line">	int unitPos = 0;</div><div class="line">	int zero = TRUE;</div><div class="line">	int v;</div><div class="line"></div><div class="line">	while (section &gt; 0) &#123;</div><div class="line">		v = section % 10;</div><div class="line">		if (v == 0) &#123;</div><div class="line">			if ((section == 0) || !zero) &#123;</div><div class="line">				zero = TRUE;</div><div class="line">				chnStr = join(chnNumChar[v], chnStr);</div><div class="line">			&#125;</div><div class="line">		&#125; else &#123;</div><div class="line">			zero = FALSE;</div><div class="line">			strIns = chnNumChar[v];</div><div class="line">			strIns = join(strIns, chnUnitChar[unitPos]);</div><div class="line">			chnStr = join(strIns, chnStr);</div><div class="line">		&#125;</div><div class="line">		unitPos++;</div><div class="line">		section = section / 10;</div><div class="line">	&#125;</div><div class="line">	return chnStr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">char *join(char *s1, char *s2) &#123;</div><div class="line">	char *result = malloc(strlen(s1) + strlen(s2) + 1);</div><div class="line">	// in real code you would check for errors in malloc here</div><div class="line">	if (result == NULL)</div><div class="line">		exit(1);</div><div class="line"></div><div class="line">	strcpy(result, s1);</div><div class="line">	strcat(result, s2);</div><div class="line"></div><div class="line">	return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>运行结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">~/classical(master*) » gcc nums2chinese.c -o n2c</div><div class="line">~/classical(master*) » ./n2c 41523                                                                                                                                                                                               qiangwan@qiangdeMacBook-Pro</div><div class="line">输入数字: 41523</div><div class="line">section: 1523</div><div class="line">section to chinese: 一千五百二十三</div><div class="line">section: 4</div><div class="line">section to chinese: 四</div><div class="line">转换结果: 四万一千五百二十三</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/自驱动的见解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1386,7 +1514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
