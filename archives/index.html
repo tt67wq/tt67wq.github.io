@@ -43,6 +43,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2018/04/20/解决复杂问题的一个思路/">解决复杂问题的一个思路</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2018/02/24/稳定匹配问题/">稳定匹配问题</a>
                                 </li>
                                 
@@ -144,6 +148,8 @@
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
                 
+                    <a  data-pjax href="/2018/04/20/解决复杂问题的一个思路/">解决复杂问题的一个思路</a>
+                
                     <a  data-pjax href="/2018/02/24/稳定匹配问题/">稳定匹配问题</a>
                 
                     <a  data-pjax href="/2018/02/09/和尚妖怪过河问题/">和尚妖怪过河问题</a>
@@ -206,6 +212,42 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2018/04/20/解决复杂问题的一个思路/">解决复杂问题的一个思路</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2018-04-20T09:59:50.000Z"
+                      itemprop="datePublished">2018-04-20</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                最近在练习欧拉计划的过程中，逐渐找到了一个解决较为复杂的穷举问题的指导思想，即为
+
+化被动验证为主动构造
+
+看个简单的例子欧拉计划135题
+简单的说就是定义了一个问题
+
+functioin(n) = Count({x, y, z} |x + z = 2y,  x^2 - y^2 - z^2=n)
+
+在[1155， 1000000]的范围里面找到function(n)=10的解的个数
+老夫首先想到的思路就是先把function(n)这个算
+                
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
@@ -464,33 +506,6 @@ redis源码。这个也是老司机推荐给我的，一个是代码比较亲和
 之前的代码组织比较混乱，也不好阅读，
 加之现在主要只练习欧拉计划的题目，就改了个名字
 
-                
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2017/10/11/Elixir简单cache的实现/">Elixir简单cache的实现</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2017-10-11T09:35:02.000Z"
-                      itemprop="datePublished">2017-10-11</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                利用Elixir自带的GenServer模块可以轻松实现一个并发的多路缓存，同步读，异步写，可以设置tag
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657defmodule Cache do  @moduledoc &quot;&quot;&quot;  Genserver多
                 
             </p>
             
