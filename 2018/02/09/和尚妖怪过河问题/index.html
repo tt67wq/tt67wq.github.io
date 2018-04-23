@@ -1,233 +1,93 @@
-<!DOCTYPE html>
-<html>
 
+ <!DOCTYPE HTML>
+<html >
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>和尚妖怪过河问题 | Hexo</title>
-  <meta name="description" content="" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="/css/component.css" />
-  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-  <meta name="generator" content="Hexo">
-  <script src="http://static.duoshuo.com/embed.js"></script>
+  <meta charset="UTF-8">
   
-  
-  
-
-  
-
+    <title>和尚妖怪过河问题 | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" content="《算法的乐趣》第六章有个题目，和尚和妖怪过河。
+12345有三个和尚和三个妖怪要利用唯一的一条小船过河，这条小船一次只能载两个人，同时，无论是在河的两岸还是在船上，只要妖怪的数量大于和尚的数量，妖怪们就会将和尚吃掉。现在需要选择一种过河的安排，保证和尚和妖怪都能过河且和尚不能被妖怪吃掉。
+这是个挺经">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-<div class="container">
-    <div class="mp-pusher" id="mp-pusher">
-        <i id="scroll-up" class="fa fa-angle-up"></i>
-        <nav id="mp-menu" class="mp-menu">
-            <div class="mp-level">
-                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
-                        Home</h2></a>
-                <ul class="first-level">
-                    <li>
-                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
-                            </i>&nbsp;&nbsp;Archive</a>
-                        <div class="mp-level page-list">
-                            <h2 ><i class="fa fa-archive"></i>
-                                Archive</h2>
-                            <a class="mp-back" href="#">back</a>
-                            <form id="search-form" action="">
-                                <input type="text" class="search search-archive" placeholder="Search.."/>
-                            </form>
-                            <ul>
-                                <div class="mp-scroll">
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/04/20/解决复杂问题的一个思路/">解决复杂问题的一个思路</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/02/24/稳定匹配问题/">稳定匹配问题</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/02/09/和尚妖怪过河问题/">和尚妖怪过河问题</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/02/07/elixir解倒水问题/">elixir解倒水问题</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/01/31/数字与汉字互相转换的算法/">数字与汉字相互转换的算法</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/01/29/自驱动的见解/">自驱动的见解</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/01/13/源码阅读计划/">源码阅读计划</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/12/28/Linux编程实践仓库/">Linux编程实践仓库</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/12/18/欧拉计划暂停更新说明/">欧拉计划暂停更新说明</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/11/01/代码库变更/">代码库变更</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/10/11/Elixir简单cache的实现/">Elixir简单cache的实现</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/09/27/三观与自由意志/">三观与自由意志</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/09/23/算法练习仓库/">算法练习仓库</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/09/22/起始的篇章/">起始的篇章</a>
-                                </li>
-                                
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
-                            </i>&nbsp;&nbsp;Categories</a>
 
-                        <div class="mp-level page-list">
-                            <h2 ><i class="fa fa-copy"></i>
-                                Categories</h2>
-                            <a class="mp-back" href="#">back</a>
-                            <form id="search-form" action="">
-                                <input type="text" class="search search-category" placeholder="Search.."/>
-                            </form>
-                            <ul>
-                                <div class="mp-scroll">
-                                
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
-                            </i>&nbsp;&nbsp;Tags</a>
-                        <div class="mp-level page-list">
-                            <h2 ><i class="fa fa-tags"></i>
-                                Tags</h2>
-                            <a class="mp-back" href="#">back</a>
-                            <form id="search-form" action="">
-                                <input type="text" class="search search-tag" placeholder="Search.."/>
-                            </form>
-                            <ul>
-                                <div class="mp-scroll">
-                                
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    
-                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
-                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
 
-                </ul>
-
-            </div>
-        </nav>
-        <div id="pjax">
-            <div class="pjax-hidden" style="display: none">
-                
-                    <a  data-pjax href="/2018/04/20/解决复杂问题的一个思路/">解决复杂问题的一个思路</a>
-                
-                    <a  data-pjax href="/2018/02/24/稳定匹配问题/">稳定匹配问题</a>
-                
-                    <a  data-pjax href="/2018/02/09/和尚妖怪过河问题/">和尚妖怪过河问题</a>
-                
-                    <a  data-pjax href="/2018/02/07/elixir解倒水问题/">elixir解倒水问题</a>
-                
-                    <a  data-pjax href="/2018/01/31/数字与汉字互相转换的算法/">数字与汉字相互转换的算法</a>
-                
-                    <a  data-pjax href="/2018/01/29/自驱动的见解/">自驱动的见解</a>
-                
-                    <a  data-pjax href="/2018/01/13/源码阅读计划/">源码阅读计划</a>
-                
-                    <a  data-pjax href="/2017/12/28/Linux编程实践仓库/">Linux编程实践仓库</a>
-                
-                    <a  data-pjax href="/2017/12/18/欧拉计划暂停更新说明/">欧拉计划暂停更新说明</a>
-                
-                    <a  data-pjax href="/2017/11/01/代码库变更/">代码库变更</a>
-                
-                    <a  data-pjax href="/2017/10/11/Elixir简单cache的实现/">Elixir简单cache的实现</a>
-                
-                    <a  data-pjax href="/2017/09/27/三观与自由意志/">三观与自由意志</a>
-                
-                    <a  data-pjax href="/2017/09/23/算法练习仓库/">算法练习仓库</a>
-                
-                    <a  data-pjax href="/2017/09/22/起始的篇章/">起始的篇章</a>
-                
-                
-                
-                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
-            </div>
-            <nav class="nexus">
-                <li  style="border-left: 1px solid #c6d0da;">
-                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
-                </li>
-                <li ><a id="nexus-back" data-pjax href="/">Hexo</a></li>
-                
-                <div id="nav-container">
-                    <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">和尚妖怪过河问题</a></li>
-                        <li id="navbar-toc" style="border-left: none">
-                            <a style="padding-right: 15px">
-                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
-                            </a>
-                            <div class="hidden-box">
-                                <ul id="toc"></ul>
-                            </div>
-                        </li>
-                    </div>
-                </div>
-                
-            </nav>
-
-            <div class="scroller">
-            <div class="scroller-inner">
-
-
-<!-- -->
-<!--<body class="post-template">-->
-<!---->
-  
-
-<main class="content" role="main">
-    <article class="post" >
-    <span class="post-meta">
-                  <div class="tag-tile">
-                      
-                  </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">和尚妖怪过河问题</h1>
-
-                    <div class="post-meta">
-                        Post on<span class="fa fa-clock-o"></span>
-                        <time datetime="2018-02-09T07:20:33.000Z"
-                              itemprop="datePublished">2018-02-09</time>
-                    </div>
-    </span>
-
-        <section class="post-content">
-            <p>《算法的乐趣》第六章有个题目，和尚和妖怪过河。</p>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/02/09/和尚妖怪过河问题/" title="和尚妖怪过河问题" itemprop="url">和尚妖怪过河问题</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="John Doe">John Doe</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2018-02-09T07:20:33.000Z" itemprop="datePublished">2018-02-09</time>
+    Updated:<time datetime="2018-04-23T06:08:06.000Z" itemprop="dateModified">2018-04-23</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+		</div>
+		
+		<p>《算法的乐趣》第六章有个题目，和尚和妖怪过河。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">有三个和尚和三个妖怪要利用唯一的一条小船过河，</div><div class="line">这条小船一次只能载两个人，同时，无论是在河的两岸还是在船上，</div><div class="line">只要妖怪的数量大于和尚的数量，妖怪们就会将和尚吃掉。</div><div class="line">现在需要选择一种过河的安排，</div><div class="line">保证和尚和妖怪都能过河且和尚不能被妖怪吃掉。</div></pre></td></tr></table></figure>
 <p>这是个挺经典的题目，网上的解法一搜一堆，思路也都是差不多，这里用elixir描述一下，感受下ex的简洁</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">defmodule MonkAndMonster do</div><div class="line">  @moduledoc &quot;&quot;&quot;</div><div class="line">  有三个和尚和三个妖怪要利用唯一的一条小船过河，这条小船一次只能载两个人，</div><div class="line">  同时，无论是在河的两岸还是在船上，只要妖怪的数量大于和尚的数量，</div><div class="line">  妖怪们就会将和尚吃掉。现在需要选择一种过河的安排，保证和尚和妖怪都能过河且和尚不能被妖怪吃掉。</div><div class="line"></div><div class="line">  定义数据结构</div><div class="line">  初始状态为</div><div class="line">  [&#123;:left, [3, 3]&#125;, &#123;:right, [0, 0]&#125;, &#123;:ship_pos, 0&#125;]</div><div class="line">  简化为 [3,3,0,0,0]</div><div class="line">  &quot;&quot;&quot;</div><div class="line">  @doc &quot;&quot;&quot;</div><div class="line">  状态转换</div><div class="line">  过河的情况无非5种</div><div class="line">  1个和尚过河， 2个和尚过河</div><div class="line">  1个妖怪过河， 2个妖怪过河</div><div class="line">  1个和尚加一个妖怪过河</div><div class="line">  过滤掉非法的状态机和和尚被吃掉的情况</div><div class="line">  &quot;&quot;&quot;</div><div class="line">  def state_iter([lh, lm, rh, rm, 0]) do</div><div class="line">    [</div><div class="line">      [lh - 1, lm, rh + 1, rm, 1],</div><div class="line">      [lh - 2, lm, rh + 2, rm, 1],</div><div class="line">      [lh, lm - 1, rh, rm + 1, 1],</div><div class="line">      [lh, lm - 2, rh, rm + 2, 1],</div><div class="line">      [lh - 1, lm - 1, rh + 1, rm + 1, 1]</div><div class="line">    ]</div><div class="line">    |&gt; Enum.filter(fn x -&gt; not negetive?(x) end)</div><div class="line">    |&gt; Enum.filter(fn x -&gt; safe?(x) end)</div><div class="line">  end</div><div class="line"></div><div class="line">  def state_iter([lh, lm, rh, rm, 1]) do</div><div class="line">    [</div><div class="line">      [lh + 1, lm, rh - 1, rm, 0],</div><div class="line">      [lh + 2, lm, rh - 2, rm, 0],</div><div class="line">      [lh, lm + 1, rh, rm - 1, 0],</div><div class="line">      [lh, lm + 2, rh, rm - 2, 0],</div><div class="line">      [lh + 1, lm + 1, rh - 1, rm - 1, 0]</div><div class="line">    ]</div><div class="line">    |&gt; Enum.filter(fn x -&gt; not negetive?(x) end)</div><div class="line">    |&gt; Enum.filter(fn x -&gt; safe?(x) end)</div><div class="line">  end</div><div class="line"></div><div class="line">  defp negetive?([h | _t]) when h &lt; 0, do: true</div><div class="line">  defp negetive?([_h | t]), do: negetive?(t)</div><div class="line">  defp negetive?([]), do: false</div><div class="line"></div><div class="line">  defp over?([h | _t]), do: h == [0, 0, 3, 3, 1]</div><div class="line"></div><div class="line">  @doc &quot;&quot;&quot;</div><div class="line">  是否全部结束</div><div class="line">  &quot;&quot;&quot;</div><div class="line">  defp all_over?(chains) do</div><div class="line">    l1 = length(chains)</div><div class="line">    l2 = chains |&gt; Enum.filter(fn x -&gt; over?(x) end) |&gt; length()</div><div class="line">    l1 == l2</div><div class="line">  end</div><div class="line"></div><div class="line">  @doc &quot;&quot;&quot;</div><div class="line">  检查是否安全</div><div class="line">  &quot;&quot;&quot;</div><div class="line">  def safe?([lh, lm, 0, _rm, _]), do: lh &gt;= lm</div><div class="line">  def safe?([0, _lm, rh, rm, _]), do: rh &gt;= rm</div><div class="line">  def safe?([lh, lm, rh, rm, _]), do: lh &gt;= lm and rh &gt;= rm</div><div class="line"></div><div class="line">  @doc &quot;&quot;&quot;</div><div class="line">  防止循环</div><div class="line">  &quot;&quot;&quot;</div><div class="line">  def repeat?(chain, state), do: rp(chain, state)</div><div class="line">  defp rp([h | _t], state) when state == h, do: true</div><div class="line">  defp rp([_h | t], state), do: rp(t, state)</div><div class="line">  defp rp([], _state), do: false</div><div class="line"></div><div class="line">  def state_chain([h | t] = chain) do</div><div class="line">    state_iter(h)</div><div class="line">    |&gt; Enum.filter(fn x -&gt; not repeat?(t, x) end)</div><div class="line">    |&gt; Enum.map(fn x -&gt; [x | chain] end)</div><div class="line">  end</div><div class="line"></div><div class="line">  @doc &quot;&quot;&quot;</div><div class="line">  树结构展开为一个列表</div><div class="line">  &quot;&quot;&quot;</div><div class="line">  def state_tree(chains), do: chains |&gt; Enum.reduce([], fn x, acc -&gt; state_chain(x) ++ acc end)</div><div class="line"></div><div class="line">  def solution() do</div><div class="line">    sl([[[3, 3, 0, 0, 0]]])</div><div class="line">  end</div><div class="line"></div><div class="line">  defp sl(chains) do</div><div class="line">    cond do</div><div class="line">      all_over?(chains) -&gt; chains</div><div class="line">      :else -&gt; sl(state_tree(chains))</div><div class="line">    end</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
@@ -240,72 +100,202 @@
 <p>自认为ex的代码更加优雅</p>
 <hr>
 <p><img src="/images/wechat.jpeg" alt="Wechat"></p>
-
-        </section>
-        <hr/>
-        <nav class="pagination" style="width:auto" role="pagination">
-            
-            <a data-pjax class="newer-posts" href="/2018/02/24/稳定匹配问题/">← Prev Post</a>
-            
-            <a class="share-button" data-original-title title>Share this Post</a>
-            
-            <a data-pjax class="older-posts" href="/2018/02/07/elixir解倒水问题/">Next Post →</a>
-            
-        </nav>
-        <br/>
-        <br/>
-        <section id="comment">
-            <div id="comment-box"></div>
-        </section>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
 
-    </article>
-</main>
 
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2018/02/09/和尚妖怪过河问题/" data-title="和尚妖怪过河问题 | Hexo" data-tsina="" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/02/24/稳定匹配问题/" title="稳定匹配问题">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  稳定匹配问题</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/02/07/elixir解倒水问题/"  title="elixir解倒水问题">
+ <strong>NEXT:</strong><br/> 
+ <span>elixir解倒水问题
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
 
   
-<footer class="site-footer">
-    
-    <div class="inner">
-        <section class="copyright"><a href="/"></a> &copy; Hexo 2014</section>
-        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+
+  
+
+  <div class="rsspart">
+	<a href="" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
     </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2018 
+		
+		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
 </footer>
-</div>
-</div><!-- /scroller -->
-
-</div><!-- /pusher -->
-</div><!-- /container -->
-</div>
-
-<!-- Easter eggs -->
-
-<div class="egg animated">
-    <a id="close-button" href="#">X</a>
-    <div class="block">
-        <div class="loading">
-            <span class="ball1"></span>
-            <span class="ball2"></span>
-        </div>
-    </div>
-</div>
-  
-<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
-<script>
-    if (!window.jQuery) {
-        var script = document.createElement('script');
-        script.src = "/js/jquery.min.js";
-        document.body.appendChild(script);
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
     }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
 </script>
-<script type="text/javascript" src="/js/lib.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
 
 
 
 
-
-</body>
+  </body>
 </html>

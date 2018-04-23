@@ -1,568 +1,318 @@
-<!DOCTYPE html>
-<html>
 
+ <!DOCTYPE HTML>
+<html >
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Hexo</title>
-  <meta name="description" content="" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="/css/component.css" />
-  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-  <meta name="generator" content="Hexo">
-  <script src="http://static.duoshuo.com/embed.js"></script>
+  <meta charset="UTF-8">
   
-  
-  
-
-  
-
-</head>
-<body>
-<div class="container">
-    <div class="mp-pusher" id="mp-pusher">
-        <i id="scroll-up" class="fa fa-angle-up"></i>
-        <nav id="mp-menu" class="mp-menu">
-            <div class="mp-level">
-                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
-                        Home</h2></a>
-                <ul class="first-level">
-                    <li>
-                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
-                            </i>&nbsp;&nbsp;Archive</a>
-                        <div class="mp-level page-list">
-                            <h2 ><i class="fa fa-archive"></i>
-                                Archive</h2>
-                            <a class="mp-back" href="#">back</a>
-                            <form id="search-form" action="">
-                                <input type="text" class="search search-archive" placeholder="Search.."/>
-                            </form>
-                            <ul>
-                                <div class="mp-scroll">
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/04/20/解决复杂问题的一个思路/">解决复杂问题的一个思路</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/02/24/稳定匹配问题/">稳定匹配问题</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/02/09/和尚妖怪过河问题/">和尚妖怪过河问题</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/02/07/elixir解倒水问题/">elixir解倒水问题</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/01/31/数字与汉字互相转换的算法/">数字与汉字相互转换的算法</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/01/29/自驱动的见解/">自驱动的见解</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2018/01/13/源码阅读计划/">源码阅读计划</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/12/28/Linux编程实践仓库/">Linux编程实践仓库</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/12/18/欧拉计划暂停更新说明/">欧拉计划暂停更新说明</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/11/01/代码库变更/">代码库变更</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/10/11/Elixir简单cache的实现/">Elixir简单cache的实现</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/09/27/三观与自由意志/">三观与自由意志</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/09/23/算法练习仓库/">算法练习仓库</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2017/09/22/起始的篇章/">起始的篇章</a>
-                                </li>
-                                
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
-                            </i>&nbsp;&nbsp;Categories</a>
-
-                        <div class="mp-level page-list">
-                            <h2 ><i class="fa fa-copy"></i>
-                                Categories</h2>
-                            <a class="mp-back" href="#">back</a>
-                            <form id="search-form" action="">
-                                <input type="text" class="search search-category" placeholder="Search.."/>
-                            </form>
-                            <ul>
-                                <div class="mp-scroll">
-                                
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
-                            </i>&nbsp;&nbsp;Tags</a>
-                        <div class="mp-level page-list">
-                            <h2 ><i class="fa fa-tags"></i>
-                                Tags</h2>
-                            <a class="mp-back" href="#">back</a>
-                            <form id="search-form" action="">
-                                <input type="text" class="search search-tag" placeholder="Search.."/>
-                            </form>
-                            <ul>
-                                <div class="mp-scroll">
-                                
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    
-                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
-                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
-
-                </ul>
-
-            </div>
-        </nav>
-        <div id="pjax">
-            <div class="pjax-hidden" style="display: none">
-                
-                    <a  data-pjax href="/2018/04/20/解决复杂问题的一个思路/">解决复杂问题的一个思路</a>
-                
-                    <a  data-pjax href="/2018/02/24/稳定匹配问题/">稳定匹配问题</a>
-                
-                    <a  data-pjax href="/2018/02/09/和尚妖怪过河问题/">和尚妖怪过河问题</a>
-                
-                    <a  data-pjax href="/2018/02/07/elixir解倒水问题/">elixir解倒水问题</a>
-                
-                    <a  data-pjax href="/2018/01/31/数字与汉字互相转换的算法/">数字与汉字相互转换的算法</a>
-                
-                    <a  data-pjax href="/2018/01/29/自驱动的见解/">自驱动的见解</a>
-                
-                    <a  data-pjax href="/2018/01/13/源码阅读计划/">源码阅读计划</a>
-                
-                    <a  data-pjax href="/2017/12/28/Linux编程实践仓库/">Linux编程实践仓库</a>
-                
-                    <a  data-pjax href="/2017/12/18/欧拉计划暂停更新说明/">欧拉计划暂停更新说明</a>
-                
-                    <a  data-pjax href="/2017/11/01/代码库变更/">代码库变更</a>
-                
-                    <a  data-pjax href="/2017/10/11/Elixir简单cache的实现/">Elixir简单cache的实现</a>
-                
-                    <a  data-pjax href="/2017/09/27/三观与自由意志/">三观与自由意志</a>
-                
-                    <a  data-pjax href="/2017/09/23/算法练习仓库/">算法练习仓库</a>
-                
-                    <a  data-pjax href="/2017/09/22/起始的篇章/">起始的篇章</a>
-                
-                
-                
-                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
-            </div>
-            <nav class="nexus">
-                <li  style="border-left: 1px solid #c6d0da;">
-                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
-                </li>
-                <li ><a id="nexus-back" data-pjax href="/">Hexo</a></li>
-                
-                <div id="nav-container">
-                    <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#"></a></li>
-                        <li id="navbar-toc" style="border-left: none">
-                            <a style="padding-right: 15px">
-                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
-                            </a>
-                            <div class="hidden-box">
-                                <ul id="toc"></ul>
-                            </div>
-                        </li>
-                    </div>
-                </div>
-                
-            </nav>
-
-            <div class="scroller">
-            <div class="scroller-inner">
-
-
-<!-- -->
-<!--<body class="home-template">-->
-<!---->
-  
-<main class="content" role="main">
-
+    <title>Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
-    <article class="post">
+    <meta name="author" content="John Doe">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2018/04/20/解决复杂问题的一个思路/">解决复杂问题的一个思路</a>
-            </h1>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2018-04-20T09:59:50.000Z"
-                      itemprop="datePublished">2018-04-20</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                最近在练习欧拉计划的过程中，逐渐找到了一个解决较为复杂的穷举问题的指导思想，即为
+    </header>
+    <div id="container">
+      <div id="main">
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2018/04/20/解决复杂问题的一个思路/" title="解决复杂问题的一个思路" itemprop="url">
+  
+    <h1 itemprop="name">解决复杂问题的一个思路</h1>
+    
+     
+           <p itemprop="description" >最近在练习欧拉计划的过程中，逐渐找到了一个解决较为复杂的穷举问题的指导思想，即为
 
 化被动验证为主动构造
 
 看个简单的例子欧拉计划135题
 简单的说就是定义了一个问题
 
-functioin(n) = Count({x, y, z} |x + z = 2y,  x^2 - y^2 - z^2=n)
-
-在[1155， 1000000]的范围里面找到function(n)=10的解的个数
-老夫首先想到的思路就是先把function(n)这个算
-                
-            </p>
-            
-        </section>
-    </article>
+functioin(n) = Count({x, y, z} |x + z = 2y,  x^2 - y^2 </p>
+        
     
-    <article class="post">
+    <time datetime="2018-04-20T09:59:50.000Z" itemprop="datePublished">2018-04-20</time>
+  </a>
+</section>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2018/02/24/稳定匹配问题/">稳定匹配问题</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2018-02-24T01:03:22.000Z"
-                      itemprop="datePublished">2018-02-24</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                《算法的乐趣》第七章有个有意思的问题，叫稳定匹配问题，问题内容是
-123456789有N男N女，每个人都按照他对异性的喜欢程度排名。现在需要写出一个算法安排这N个男的、N个女的结婚，要求两个人的婚姻应该是稳定的。何为稳定？有两对夫妻M1 F2，M2 F1。M1心目中更喜欢F1，但是他和F2结婚了，M2心目中更喜欢F2，但是命运却让他和F1结婚了，显然这样的婚姻是不稳定的，随时都可能发生M1和F1私奔或者M2和F2私奔的情况。所以在做出匹
-                
-            </p>
-            
-        </section>
-    </article>
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2018/02/24/稳定匹配问题/" title="稳定匹配问题" itemprop="url">
+  
+    <h1 itemprop="name">稳定匹配问题</h1>
     
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2018/02/09/和尚妖怪过河问题/">和尚妖怪过河问题</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2018-02-09T07:20:33.000Z"
-                      itemprop="datePublished">2018-02-09</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                《算法的乐趣》第六章有个题目，和尚和妖怪过河。
-12345有三个和尚和三个妖怪要利用唯一的一条小船过河，这条小船一次只能载两个人，同时，无论是在河的两岸还是在船上，只要妖怪的数量大于和尚的数量，妖怪们就会将和尚吃掉。现在需要选择一种过河的安排，保证和尚和妖怪都能过河且和尚不能被妖怪吃掉。
-这是个挺经典的题目，网上的解法一搜一堆，思路也都是差不多，这里用elixir描述一下，感受下ex的简洁
-12345678910111213141516
-                
-            </p>
-            
-        </section>
-    </article>
+     
+           <p itemprop="description" >《算法的乐趣》第七章有个有意思的问题，叫稳定匹配问题，问题内容是
+123456789有N男N女，每个人都按照他对异性的喜欢程度排名。现在需要写出一个算法安排这N个男的、N个女的结婚，要求两个人的婚姻应该是稳定的。何为稳定？有两对夫妻M1 F2，M2 F1。M1心目中更喜欢F1，但</p>
+        
     
-    <article class="post">
+    <time datetime="2018-02-24T01:03:22.000Z" itemprop="datePublished">2018-02-24</time>
+  </a>
+</section>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2018/02/07/elixir解倒水问题/">elixir解倒水问题</a>
-            </h1>
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2018/02/09/和尚妖怪过河问题/" title="和尚妖怪过河问题" itemprop="url">
+  
+    <h1 itemprop="name">和尚妖怪过河问题</h1>
+    
+     
+           <p itemprop="description" >《算法的乐趣》第六章有个题目，和尚和妖怪过河。
+12345有三个和尚和三个妖怪要利用唯一的一条小船过河，这条小船一次只能载两个人，同时，无论是在河的两岸还是在船上，只要妖怪的数量大于和尚的数量，妖怪们就会将和尚吃掉。现在需要选择一种过河的安排，保证和尚和妖怪都能过河且和尚不能被妖</p>
+        
+    
+    <time datetime="2018-02-09T07:20:33.000Z" itemprop="datePublished">2018-02-09</time>
+  </a>
+</section>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2018-02-07T03:41:29.000Z"
-                      itemprop="datePublished">2018-02-07</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                最近在读《算法的乐趣》这本书，里面有个问题是如何用3，5，8升的水桶，把8升水平分，是个非常经典的题目，网上搜解法也是一大堆，这里用elixir实现下，通过对比几个语言的实现方法，凸显出elixir语言逻辑清晰的特点。
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2018/02/07/elixir解倒水问题/" title="elixir解倒水问题" itemprop="url">
+  
+    <h1 itemprop="name">elixir解倒水问题</h1>
+    
+     
+           <p itemprop="description" >最近在读《算法的乐趣》这本书，里面有个问题是如何用3，5，8升的水桶，把8升水平分，是个非常经典的题目，网上搜解法也是一大堆，这里用elixir实现下，通过对比几个语言的实现方法，凸显出elixir语言逻辑清晰的特点。
 其实解这个问题挺简单，就是状态转换加搜索，具体就这个思路
 
-由当前状态得到所有可能的合法动作
-由合法动作得到下一个状态
-建立一个状态队列来实现状态记录以及检查新状态是否在队列中已经出现，避免形成死循环
-递归搜索，在达到f
-                
-            </p>
-            
-        </section>
-    </article>
+</p>
+        
     
-    <article class="post">
+    <time datetime="2018-02-07T03:41:29.000Z" itemprop="datePublished">2018-02-07</time>
+  </a>
+</section>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2018/01/31/数字与汉字互相转换的算法/">数字与汉字相互转换的算法</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2018-01-31T03:41:25.000Z"
-                      itemprop="datePublished">2018-01-31</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                最近完成了《数据结构和算法》的阅读，作为补充和总结，开始了《算法的乐趣》阅读，这里记录下里面一些算法的实现，有些在网上找不到合适的实现，就自己憋了一点出来。
-第4章里面有个数字转中文的例子，用cpp写了部分的核心代码，我想用c仿写一遍，网上找了一圈也没有现成的可以抄，只有自己慢慢磨出来。
-这个过程并不是特别顺利，知道算法怎么实现，和具体把它写出来运行成功还是有一定差距的
-12纸上得来终觉浅，绝知此事要躬行                
-                
-            </p>
-            
-        </section>
-    </article>
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2018/01/31/数字与汉字互相转换的算法/" title="数字与汉字相互转换的算法" itemprop="url">
+  
+    <h1 itemprop="name">数字与汉字相互转换的算法</h1>
     
-    <article class="post">
+     
+           <p itemprop="description" >最近完成了《数据结构和算法》的阅读，作为补充和总结，开始了《算法的乐趣》阅读，这里记录下里面一些算法的实现，有些在网上找不到合适的实现，就自己憋了一点出来。
+第4章里面有个数字转中文的例子，用cpp写了部分的核心代码，我想用c仿写一遍，网上找了一圈也没有现成的可以抄，只有自己慢慢</p>
+        
+    
+    <time datetime="2018-01-31T03:41:25.000Z" itemprop="datePublished">2018-01-31</time>
+  </a>
+</section>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2018/01/29/自驱动的见解/">自驱动的见解</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2018-01-29T04:00:43.000Z"
-                      itemprop="datePublished">2018-01-29</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                最近看了不少大佬的事迹，也看了不少大佬的代码，一直在想一个问题：
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2018/01/29/自驱动的见解/" title="自驱动的见解" itemprop="url">
+  
+    <h1 itemprop="name">自驱动的见解</h1>
+    
+     
+           <p itemprop="description" >最近看了不少大佬的事迹，也看了不少大佬的代码，一直在想一个问题：
 是什么因素导致了有些人成为了大佬，而有些人成了我这样的废柴
-小时候看名人传记，传记中无非强调的都是大佬们如何刻苦学习，如何天赋异禀，就像平时看的修真小说的主角，可是我们忽略了一些因素，为什么有些大佬在肚子都吃不饱的时候还能对有些领域有近乎痴迷的热情。
-从读小学开始，我就被告知，要好好学习，考个好成绩，为了自己的荣誉，也为了家长的脸面。从始至终，我也渐渐习惯了让别人的目光成
-                
-            </p>
-            
-        </section>
-    </article>
+小时候看名人传记，传记中无非强调的都是大佬们如何刻苦学习，如何天赋异禀，就像平时看的修真小说的主角，可是我们忽略了一些因素，为什么有些大佬在肚子都吃不饱的</p>
+        
     
-    <article class="post">
+    <time datetime="2018-01-29T04:00:43.000Z" itemprop="datePublished">2018-01-29</time>
+  </a>
+</section>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2018/01/13/源码阅读计划/">源码阅读计划</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2018-01-13T05:59:13.000Z"
-                      itemprop="datePublished">2018-01-13</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                为了从一个二流撸业务的程序员进化成一个能独当一面的老狗币，我给自己制定了诸多的方案，像源码阅读就是其中之一，但是受限于之前水平太次，读源码也读不出啥东西来，基本处于读了几行就心浮气躁，然后放弃的循环。
-后来发现了症结所在，一是自己经验有不足，就像字没认够就去读书一样，二是起始的目标定的过高，导致行动力不足，望着山高不知如何开始攀登的窘境。
-现在开始重新整理一波想要阅读的东西
-
-redis源码。这个也是老司机推荐给我的，一个是代码比较亲和
-                
-            </p>
-            
-        </section>
-    </article>
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2018/01/13/源码阅读计划/" title="源码阅读计划" itemprop="url">
+  
+    <h1 itemprop="name">源码阅读计划</h1>
     
-    <article class="post">
+     
+           <p itemprop="description" >为了从一个二流撸业务的程序员进化成一个能独当一面的老狗币，我给自己制定了诸多的方案，像源码阅读就是其中之一，但是受限于之前水平太次，读源码也读不出啥东西来，基本处于读了几行就心浮气躁，然后放弃的循环。
+后来发现了症结所在，一是自己经验有不足，就像字没认够就去读书一样，二是起始的目</p>
+        
+    
+    <time datetime="2018-01-13T05:59:13.000Z" itemprop="datePublished">2018-01-13</time>
+  </a>
+</section>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2017/12/28/Linux编程实践仓库/">Linux编程实践仓库</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2017-12-28T08:06:12.000Z"
-                      itemprop="datePublished">2017-12-28</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                Unix/Linux编程实践
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/12/28/Linux编程实践仓库/" title="Linux编程实践仓库" itemprop="url">
+  
+    <h1 itemprop="name">Linux编程实践仓库</h1>
+    
+     
+           <p itemprop="description" >Unix/Linux编程实践
 之前在研究《Unix环境高级编程》的过程中，感觉上手比较难，很多不理解，于是在网上查了些其他人学习的经验，很多人都推荐这本书，我粗略浏览了下，这本书的深度和梯度对想要了解unix的新手来说要友好很多，于是我专门开个仓来更新下这本书的代码和练习。
-共勉
-
-
-
-                
-            </p>
-            
-        </section>
-    </article>
+共勉</p>
+        
     
-    <article class="post">
+    <time datetime="2017-12-28T08:06:12.000Z" itemprop="datePublished">2017-12-28</time>
+  </a>
+</section>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2017/12/18/欧拉计划暂停更新说明/">欧拉计划暂停更新说明</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2017-12-18T03:10:49.000Z"
-                      itemprop="datePublished">2017-12-18</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                欧拉计划
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/12/18/欧拉计划暂停更新说明/" title="欧拉计划暂停更新说明" itemprop="url">
+  
+    <h1 itemprop="name">欧拉计划暂停更新说明</h1>
+    
+     
+           <p itemprop="description" >欧拉计划
 刚刚刷到120多题目，决定先暂停更新进度，先加一波油。120题后难度逐渐加大，之前的一些三脚猫的方法逐渐不顶用了。
-现在准备回炉一波，好好再温习一下《数据结构与算法》这本书，不过，复习的时候代码还是会写到这个项目里面，新建了一个目录叫classical，用于将经典的数据结构和算法实现一发，不过不是elixir实现了，改用C语言实现，一方面是有些题目还是需要性能，c在这方面无可比肩，二来最近在研读《unix环境编程》，主要都是用
-                
-            </p>
-            
-        </section>
-    </article>
+现在准备回炉一波，好好再温习一下《数据结构与算法》这本书，不过，复习的时候代码还是会写到这个项目里面，新建了一个目录叫classical，用于将经典的数据</p>
+        
     
-    <article class="post">
+    <time datetime="2017-12-18T03:10:49.000Z" itemprop="datePublished">2017-12-18</time>
+  </a>
+</section>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2017/11/01/代码库变更/">代码库变更</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2017-11-01T05:34:01.000Z"
-                      itemprop="datePublished">2017-11-01</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                欧拉计划
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/11/01/代码库变更/" title="代码库变更" itemprop="url">
+  
+    <h1 itemprop="name">代码库变更</h1>
+    
+     
+           <p itemprop="description" >欧拉计划
 之前的算法练习仓库已经关闭，现在在这个仓库里面更新代码
 之前的代码组织比较混乱，也不好阅读，
-加之现在主要只练习欧拉计划的题目，就改了个名字
-
-
-
-                
-            </p>
-            
-        </section>
-    </article>
+加之现在主要只练习欧拉计划的题目，就改了个名字</p>
+        
     
-    <nav class="pagination" role="pagination">
-        
-        <span class="page-number">Page 1 of 2</span>
-        
-        <a data-pjax class="older-posts" href="/page/2/">Older Posts →</a>
-        
-    </nav>
-</main>
+    <time datetime="2017-11-01T05:34:01.000Z" itemprop="datePublished">2017-11-01</time>
+  </a>
+</section>
 
+
+  <nav id="page-nav" class="clearfix">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
 
   
-<footer class="site-footer">
-    
-    <div class="inner">
-        <section class="copyright"><a href="/"></a> &copy; Hexo 2014</section>
-        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+
+  
+
+  <div class="rsspart">
+	<a href="" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
     </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2018 
+		
+		<a href="http://yoursite.com" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
 </footer>
-</div>
-</div><!-- /scroller -->
-
-</div><!-- /pusher -->
-</div><!-- /container -->
-</div>
-
-<!-- Easter eggs -->
-
-<div class="egg animated">
-    <a id="close-button" href="#">X</a>
-    <div class="block">
-        <div class="loading">
-            <span class="ball1"></span>
-            <span class="ball2"></span>
-        </div>
-    </div>
-</div>
-  
-<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
-<script>
-    if (!window.jQuery) {
-        var script = document.createElement('script');
-        script.src = "/js/jquery.min.js";
-        document.body.appendChild(script);
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
     }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
 </script>
-<script type="text/javascript" src="/js/lib.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
 
 
 
@@ -570,5 +320,5 @@ redis源码。这个也是老司机推荐给我的，一个是代码比较亲和
 
 
 
-</body>
-</html>
+  </body>
+ </html>
