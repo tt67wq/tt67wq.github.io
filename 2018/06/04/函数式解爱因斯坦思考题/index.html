@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="最近看书《算法的乐趣》中讲了一题很有意思的题目，之前看过之后没有实践，昨天技痒，想写个函数式版本的推理过程，在想象中，我都知道了推理过程了，再去描述出来，应该没太大问题，而编码的过程无情的打了我的脸，磕磕巴巴的编了一上午才跑出结果。看来我果然不是那2%的人。 题目原文 123456789101112131415161718192021222324252627282930313233343536据说">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数式解爱因斯坦思考题">
+<meta property="og:url" content="http://yoursite.com/2018/06/04/函数式解爱因斯坦思考题/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近看书《算法的乐趣》中讲了一题很有意思的题目，之前看过之后没有实践，昨天技痒，想写个函数式版本的推理过程，在想象中，我都知道了推理过程了，再去描述出来，应该没太大问题，而编码的过程无情的打了我的脸，磕磕巴巴的编了一上午才跑出结果。看来我果然不是那2%的人。 题目原文 123456789101112131415161718192021222324252627282930313233343536据说">
+<meta property="og:image" content="http://yoursite.com/images/wechat.jpeg">
+<meta property="og:updated_time" content="2018-06-04T06:13:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数式解爱因斯坦思考题">
+<meta name="twitter:description" content="最近看书《算法的乐趣》中讲了一题很有意思的题目，之前看过之后没有实践，昨天技痒，想写个函数式版本的推理过程，在想象中，我都知道了推理过程了，再去描述出来，应该没太大问题，而编码的过程无情的打了我的脸，磕磕巴巴的编了一上午才跑出结果。看来我果然不是那2%的人。 题目原文 123456789101112131415161718192021222324252627282930313233343536据说">
+<meta name="twitter:image" content="http://yoursite.com/images/wechat.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/04/函数式解爱因斯坦思考题/"/>
+
+
+
+
+
+  <title>函数式解爱因斯坦思考题 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/函数式解爱因斯坦思考题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tt67wq">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">函数式解爱因斯坦思考题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-04T13:55:04+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近看书《算法的乐趣》中讲了一题很有意思的题目，之前看过之后没有实践，昨天技痒，想写个函数式版本的推理过程，在想象中，我都知道了推理过程了，再去描述出来，应该没太大问题，而编码的过程无情的打了我的脸，磕磕巴巴的编了一上午才跑出结果。看来我果然不是那2%的人。</p>
+<p>题目原文</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">据说有五个不同颜色的房间排成一排，每个房间里分别住着一个不同国籍的人，</div><div class="line">每个人都喝一种特定品牌的饮料，抽一种特定品牌的烟，养一种宠物，</div><div class="line">没有任意两个人抽相同品牌的香烟，或喝相同品牌的饮料，或养相同的宠物，</div><div class="line">问题是谁在养鱼作为宠物？</div><div class="line"></div><div class="line">为了寻找答案，爱因斯坦给出了十五条线索:</div><div class="line"></div><div class="line">(1)、英国人住在红色的房子里；</div><div class="line"></div><div class="line">(2)、瑞典人养狗作为宠物；</div><div class="line"></div><div class="line">(3)、丹麦人喝茶；</div><div class="line"></div><div class="line">(4)、绿房子紧挨着白房子，在白房子的左边；</div><div class="line"></div><div class="line">(5)、绿房子的主人喝咖啡；</div><div class="line"></div><div class="line">(6)、抽Pall Mall牌香烟的人养鸟；</div><div class="line"></div><div class="line">(7)、黄色房子里的人抽Dunhill牌香烟；</div><div class="line"></div><div class="line">(8)、住在中间那个房子里的人喝牛奶；</div><div class="line"></div><div class="line">(9)、挪威人住在第一个房子里面；</div><div class="line"></div><div class="line">(10)、抽Blends牌香烟的人和养猫的人相邻；</div><div class="line"></div><div class="line">(11)、养马的人和抽Dunhill牌香烟的人相邻；</div><div class="line"></div><div class="line">(12)、抽BlueMaster牌香烟的人和啤酒；</div><div class="line"></div><div class="line">(13)、德国人抽Prince牌香烟；</div><div class="line"></div><div class="line">(14)、挪威人和住在蓝房子的人相邻；</div><div class="line"></div><div class="line">(15)、抽Blends牌香烟的人和喝矿泉水的人相邻。</div></pre></td></tr></table></figure>
+<p>根据条件的性质，可以把线索进行分类</p>
+<ul>
+<li><p>单个属性类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(1)、英国人住在红色的房子里；  </div><div class="line">(2)、瑞典人养狗作为宠物；</div><div class="line">(3)、丹麦人喝茶；</div><div class="line">(5)、绿房子的主人喝咖啡；</div><div class="line">(6)、抽Pall Mall牌香烟的人养鸟；</div><div class="line">(7)、黄色房子里的人抽Dunhill牌香烟；</div><div class="line">(12)、抽BlueMaster牌香烟的人喝啤酒；</div><div class="line">(13)、德国人抽Prince牌香烟；</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>相邻关系类</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(10)、抽Blends牌香烟的人和养猫的人相邻；</div><div class="line">(11)、养马的人和抽Dunhill牌香烟的人相邻;</div><div class="line">(14)、挪威人和住在蓝房子的人相邻；</div><div class="line">(15)、抽Blends牌香烟的人和喝矿泉水的人相邻。</div></pre></td></tr></table></figure>
+</li>
+<li><p>其他类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(8)、住在中间那个房子里的人喝牛奶；	</div><div class="line">(9)、挪威人住在第一个房子里面；</div><div class="line">(4)、绿房子紧挨着白房子，在白房子的左边；</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>我们用以下结构表示单个属性和相邻关系，至于其他类，在代码中具体讨论</p>
+<ul>
+<li><p>单个属性</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">defmodule EinsteinProblem.Bind do</div><div class="line"> 		defstruct first_type: nil,</div><div class="line">           		first_value: nil,</div><div class="line">           		second_type: nil,</div><div class="line">           		second_value: nil</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>相邻属性</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">defmodule EinsteinProblem.Relation do</div><div class="line">  defstruct item_type: nil,</div><div class="line">            item_value: nil,</div><div class="line">            related_type: nil,</div><div class="line">            related_value: nil</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="具体思路"><a href="#具体思路" class="headerlink" title="具体思路"></a>具体思路</h3><p>首先我们枚举出所有符合条件的单个属性集合体</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">items =</div><div class="line">  for color &lt;- [&quot;red&quot;, &quot;yellow&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;white&quot;],</div><div class="line">      nation &lt;- [&quot;England&quot;, &quot;Sweden&quot;, &quot;Denmark&quot;, &quot;Germany&quot;, &quot;Norway&quot;],</div><div class="line">      drink &lt;- [&quot;water&quot;, &quot;tea&quot;, &quot;milk&quot;, &quot;coffee&quot;, &quot;beer&quot;],</div><div class="line">      pet &lt;- [&quot;cat&quot;, &quot;horse&quot;, &quot;fish&quot;, &quot;bird&quot;, &quot;dog&quot;],</div><div class="line">      cigaret &lt;- [&quot;dunhill&quot;, &quot;blends&quot;, &quot;pall mall&quot;, &quot;prince&quot;, &quot;bluemater&quot;] do</div><div class="line">    %&#123;</div><div class="line">      &quot;color&quot; =&gt; color,</div><div class="line">      &quot;nation&quot; =&gt; nation,</div><div class="line">      &quot;drink&quot; =&gt; drink,</div><div class="line">      &quot;pet&quot; =&gt; pet,</div><div class="line">      &quot;cigaret&quot; =&gt; cigaret</div><div class="line">    &#125;</div><div class="line">  end</div></pre></td></tr></table></figure>
+<p>这里我们用一个map当做五个属性的集合体</p>
+<p>接下来自然而然的根据bind和relation的关系进行过滤，这里有个隐藏的bind关系，相邻关系可以反向作为bind的过滤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">def filter_by_binds(item) do</div><div class="line">  l =</div><div class="line">    @binds</div><div class="line">    |&gt; Enum.filter(fn x -&gt; filter_by_bind(item, x) end)</div><div class="line">    |&gt; length()</div><div class="line"></div><div class="line">  l == 8</div><div class="line">end</div><div class="line"></div><div class="line">defp filter_by_bind(item, bind) do</div><div class="line">  cond do</div><div class="line">    Map.fetch!(item, bind.first_type) == bind.first_value and</div><div class="line">        Map.fetch!(item, bind.second_type) != bind.second_value -&gt;</div><div class="line">      false</div><div class="line"></div><div class="line">    Map.fetch!(item, bind.second_type) == bind.second_value and</div><div class="line">        Map.fetch!(item, bind.first_type) != bind.first_value -&gt;</div><div class="line">      false</div><div class="line"></div><div class="line">    :else -&gt;</div><div class="line">      true</div><div class="line">  end</div><div class="line">end</div><div class="line"></div><div class="line">def filter_by_relations2(item) do</div><div class="line">  l =</div><div class="line">    @relation</div><div class="line">    |&gt; Enum.filter(fn x -&gt; filter_by_relations2(item, x) end)</div><div class="line">    |&gt; length</div><div class="line"></div><div class="line">  l == 5</div><div class="line">end</div><div class="line"></div><div class="line">defp filter_by_relations2(item, relation) do</div><div class="line">  cond do</div><div class="line">    Map.fetch!(item, relation.item_type) == relation.item_value and</div><div class="line">        Map.fetch!(item, relation.related_type) == relation.related_value -&gt;</div><div class="line">      false</div><div class="line"></div><div class="line">    :else -&gt;</div><div class="line">      true</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>到这一步，我一度找不到突破口了，本想把现在筛选出来的47个item进行排列组合再进行下一步筛选，但是A(47, 5)的计算量太大了，大大拖慢了计算速度，明显不是好的算法。</p>
+<p>这里注意到那三个没用的其他类条件，根据条件8和9，我们可以首先筛选出房子1和房子3的候选人，根据这些候选人，我们可以穷举出房子2，4，5的所有可能，再进行relation的筛选，就大大降低了复杂度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">   horse1_cands = items |&gt; Enum.filter(fn x -&gt; Map.fetch!(x, &quot;nation&quot;) == &quot;Norway&quot; end)</div><div class="line"></div><div class="line">   horse3_cands =</div><div class="line">     items</div><div class="line">     |&gt; Enum.filter(fn x -&gt; Map.fetch!(x, &quot;drink&quot;) == &quot;milk&quot; end)</div><div class="line">     |&gt; Enum.filter(fn x -&gt; Map.fetch!(x, &quot;nation&quot;) != &quot;Norway&quot; end)</div><div class="line"></div><div class="line">   for h1 &lt;- horse1_cands,</div><div class="line">       h3 &lt;- horse3_cands do</div><div class="line">     new_items =</div><div class="line">       filter_by_item(items, h1)</div><div class="line">       |&gt; filter_by_item(h3)</div><div class="line"></div><div class="line">     for h2 &lt;- new_items,</div><div class="line">         h4 &lt;- new_items |&gt; filter_by_item(h2),</div><div class="line">         h5 &lt;- new_items |&gt; filter_by_item(h2) |&gt; filter_by_item(h4) do</div><div class="line">       [h1, h2, h3, h4, h5]</div><div class="line">     end</div><div class="line">   end</div><div class="line">   |&gt; Enum.reduce([], fn x, acc -&gt; x ++ acc end)</div><div class="line">   |&gt; Enum.uniq()</div><div class="line">|&gt; Enum.filter(fn x -&gt; filter_by_relations(x) end)</div></pre></td></tr></table></figure>
+<p>到这里算出的结果有3个，再使用最后的条件 绿房子紧挨着白房子，在白房子的左边<br>轻松得出结论</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  %&#123;</div><div class="line">    &quot;cigaret&quot; =&gt; &quot;dunhill&quot;,</div><div class="line">    &quot;color&quot; =&gt; &quot;yellow&quot;,</div><div class="line">    &quot;drink&quot; =&gt; &quot;water&quot;,</div><div class="line">    &quot;nation&quot; =&gt; &quot;Norway&quot;,</div><div class="line">    &quot;pet&quot; =&gt; &quot;cat&quot;</div><div class="line">  &#125;,</div><div class="line">  %&#123;</div><div class="line">    &quot;cigaret&quot; =&gt; &quot;blends&quot;,</div><div class="line">    &quot;color&quot; =&gt; &quot;blue&quot;,</div><div class="line">    &quot;drink&quot; =&gt; &quot;tea&quot;,</div><div class="line">    &quot;nation&quot; =&gt; &quot;Denmark&quot;,</div><div class="line">    &quot;pet&quot; =&gt; &quot;horse&quot;</div><div class="line">  &#125;,</div><div class="line">  %&#123;</div><div class="line">    &quot;cigaret&quot; =&gt; &quot;pall mall&quot;,</div><div class="line">    &quot;color&quot; =&gt; &quot;red&quot;,</div><div class="line">    &quot;drink&quot; =&gt; &quot;milk&quot;,</div><div class="line">    &quot;nation&quot; =&gt; &quot;England&quot;,</div><div class="line">    &quot;pet&quot; =&gt; &quot;bird&quot;</div><div class="line">  &#125;,</div><div class="line">  %&#123;</div><div class="line">    &quot;cigaret&quot; =&gt; &quot;prince&quot;,</div><div class="line">    &quot;color&quot; =&gt; &quot;green&quot;,</div><div class="line">    &quot;drink&quot; =&gt; &quot;coffee&quot;,</div><div class="line">    &quot;nation&quot; =&gt; &quot;Germany&quot;,</div><div class="line">    &quot;pet&quot; =&gt; &quot;fish&quot;</div><div class="line">  &#125;,</div><div class="line">  %&#123;</div><div class="line">    &quot;cigaret&quot; =&gt; &quot;bluemater&quot;,</div><div class="line">    &quot;color&quot; =&gt; &quot;white&quot;,</div><div class="line">    &quot;drink&quot; =&gt; &quot;beer&quot;,</div><div class="line">    &quot;nation&quot; =&gt; &quot;Sweden&quot;,</div><div class="line">    &quot;pet&quot; =&gt; &quot;dog&quot;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>具体代码 <a href="https://github.com/tt67wq/euler_project/tree/master/classical_elixir/einstein_problem" target="_blank" rel="external">链接</a></p>
+<hr>
+<p><img src="/images/wechat.jpeg" alt="Wechat"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/26/质数校验/" rel="next" title="质数校验">
+                <i class="fa fa-chevron-left"></i> 质数校验
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">tt67wq</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#具体思路"><span class="nav-number">1.</span> <span class="nav-text">具体思路</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tt67wq</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
